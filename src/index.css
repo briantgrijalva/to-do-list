@@ -1,0 +1,108 @@
+* {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #E6E6E6;
+}
+
+.container-principal {
+  background-color: #F2F2F2;
+}
+
+.container-home {
+  background-color: transparent;
+  height: 92vh;
+  display: inline-block;
+  width: 60%;
+  vertical-align: top;
+}
+
+.container-nav {
+  background-color: #F2F2F2;
+  height: 8vh;
+  background-blend-mode: soft-light, normal;
+  box-shadow: -6.64551px -6.64551px 19.9365px #FFFFFF, 9.96827px 9.96827px 19.9365px rgba(174, 174, 192, 0.4);
+}
+
+.container-rightside {
+  background-color: #F2F2F2;
+  height: 92vh;
+  display: inline-block;
+  width: 20%;
+  vertical-align: top;
+  background-blend-mode: soft-light, normal;
+  box-shadow: -6.64551px -6.64551px 19.9365px #FFFFFF, 9.96827px 9.96827px 19.9365px rgba(174, 174, 192, 0.4);
+}
+
+.container-leftside {
+  position: relative;
+  height: 92vh;
+  display: inline-block;
+  width: 20%;
+  vertical-align: top;
+  background-color: #F2F2F2;
+  background-blend-mode: soft-light, normal;
+  box-shadow: -6.64551px -6.64551px 19.9365px #FFFFFF, 9.96827px 9.96827px 19.9365px rgba(174, 174, 192, 0.4);
+}
+
+.container-task {
+  background-blend-mode: soft-light, normal;
+  box-shadow: -6.64551px -6.64551px 19.9365px #FFFFFF, 9.96827px 9.96827px 19.9365px rgba(174, 174, 192, 0.4);
+  border-radius: 16px;
+  background-color: #F2F2F2;
+  height: 64px;
+  margin: 1.8rem;
+  display: flex;
+  align-items: center;
+}
+
+.container-write-task {
+  background-blend-mode: soft-light, normal;
+  box-shadow: -6.64551px -6.64551px 19.9365px #FFFFFF, 9.96827px 9.96827px 19.9365px rgba(174, 174, 192, 0.4);
+  border-radius: 16px;
+  background-color: #F2F2F2;
+  height: 64px;
+  margin: 1.8rem;
+  display: flex;
+  align-items: center;
+}
+
+.div-writetask {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.text-task {
+  background-color: transparent;
+  margin-left: 1rem;
+}
+
+.checkbox-task {
+  background-color: transparent;
+  text-align: center;
+  border: none;
+  vertical-align: middle;
+  margin-left: 1rem;
+}
+
+.input-write-task {
+  background-color: transparent;
+  margin-left: 1rem;
+  width: 100%;
+  outline: none;
+  border: none;
+}
+
+.input-write-task:focus {
+  outline: none;
+  border: none;
+}
+
+.icon-add {
+  background-color: transparent;
+  margin-left: 1rem;
+  cursor: pointer;
+}
