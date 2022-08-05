@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { taskToggleFn } from "../../actions/tasks";
 import { useAppDispatch } from "../../store/store";
 
@@ -19,18 +20,23 @@ interface TaskProps {
 
 export const Task = ({tastkText, id}: TaskProps) => {
 
+  const [through, setThrough] = useState(false);
   const dispatch = useAppDispatch()
-  console.log(id);
   
-  
+  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.checked) {
+      dispatch(taskToggleFn(e.target.id));
+      setThrough(true);
+    } else {
+      dispatch(taskToggleFn(e.target.id))
+      setThrough(false);
+    }
+  }
 
   return (
     <div className='container-task'>
-       <input type="checkbox" id={id} className='checkbox-task' onChange={ 
-        (e) => {if (e.target.checked) {console.log('checked'); dispatch(taskToggleFn(e.target.id))} else {console.log('unchecked'); dispatch(taskToggleFn(e.target.id))
-        
-       }} }/>
-      <p className='text-task'>{tastkText}</p>
+       <input type="checkbox" id={id} className='checkbox-task' onChange={handleCheckboxChange}/>
+      <p className='text-task' id={id} style={{textDecoration: through ? "line-through" : "none"}}>{tastkText}</p>
     </div>
   )
 }

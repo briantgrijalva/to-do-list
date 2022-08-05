@@ -8,8 +8,6 @@ import { WriteTask } from './ui/WriteTask'
 export const HomeScreen = () => {
 
   const task = useAppSelector(state => state.tasks.tasks)
-  console.log(task);
-  
 
   return (
     <div>
