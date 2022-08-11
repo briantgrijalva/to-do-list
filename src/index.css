@@ -49,7 +49,7 @@
   background-blend-mode: soft-light, normal;
   box-shadow: -6.64551px -6.64551px 19.9365px #FFFFFF, 9.96827px 9.96827px 19.9365px rgba(174, 174, 192, 0.4);
   border-radius: 16px;
-  background-color: #F2F2F2;
+  /* background-color: #F2F2F2; */
   height: 64px;
   margin: 1.8rem;
   display: flex;
@@ -91,7 +91,7 @@
 .input-write-task {
   background-color: transparent;
   margin-left: 1rem;
-  width: 100%;
+  width: 90%;
   outline: none;
   border: none;
 }
@@ -105,4 +105,26 @@
   background-color: transparent;
   margin-left: 1rem;
   cursor: pointer;
+}
+
+.icon-add:hover {
+  color: #0073bf;
+}
+
+.container-task-button {
+  align-items: center;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.icon-delete {
+  background-color: transparent;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.icon-delete:hover {
+  color: #bd1b1b;
 }

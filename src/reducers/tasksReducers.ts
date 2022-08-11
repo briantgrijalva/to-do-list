@@ -2,13 +2,14 @@ import { AnyAction } from 'redux'
 import { types } from '../types/typesReducers'
 
 interface TaskState {
-    tasks: Array<Task>
+    tasks: Array<ITask>
 }
 
-export interface Task {
-    id: string
+export interface ITask {
     title: string
     completed: boolean
+    author: string
+    id?: string
 }
 
 const initialState: TaskState = {
@@ -28,6 +29,8 @@ export const tasksReducer = (state = initialState, action: AnyAction) => {
             return {
                 ...state,
                 tasks: state.tasks.map(task => {
+                    console.log(task.id, action.payload);
+                    
                     if (task.id === action.payload) {
                         return {
                             ...task,
@@ -38,6 +41,24 @@ export const tasksReducer = (state = initialState, action: AnyAction) => {
                 }
                 )
             }
+        // case types.taskToggle:
+        //     return {
+        //         ...state,
+        //         tasks: state.tasks.map(
+        //             t => (t.id === action.payload.id) ? action.payload : t 
+        //         )
+        //     }
+        case types.taskRemove:
+            return {
+                ...state,
+                tasks: state.tasks.filter(task => task.id !== action.payload)
+            }
+        case types.taskLoad: {
+            return {
+                ...state,
+                tasks: [...action.payload]
+            }
+        }
             
         default:
             return state;

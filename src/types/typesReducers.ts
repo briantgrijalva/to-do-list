@@ -8,6 +8,7 @@ export const types = {
     taskUpdate: 'taskUpdate',
     taskToggle: 'taskToggle',
     taskActive: 'taskActive',
+    taskLoad: 'taskLoad',
     // taskToggleAll: 'taskToggleAll',
     // taskClearCompleted: 'taskClearCompleted',
     // taskFilter: 'taskFilter',

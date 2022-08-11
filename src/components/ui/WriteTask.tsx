@@ -44,9 +44,9 @@ export const WriteTask = () => {
     console.log('submit');
     setWriting(false);
     dispatch(taskAddFn({
-      id: Math.random().toString(),
       title: title,
-      completed: false
+      completed: false,
+      author: '62f2c0431177b8d7f9ddc235'
     }));
     reset();
   }
@@ -66,7 +66,7 @@ export const WriteTask = () => {
           arrow_forward_ios
         </span>
       )}
-      <form style={{backgroundColor: 'transparent'}} onSubmit={handleSubmit}>
+      <form style={{backgroundColor: 'transparent', width: '100%'}} onSubmit={handleSubmit}>
         <input 
           value={title} 
           name="title"
