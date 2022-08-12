@@ -37,14 +37,6 @@ const taskAdd = (task: ITask) =>({
 
 export const taskToggleFn = (task: ITask, completed: boolean): ThunkAction<void, RootState, unknown, AnyAction> => {
   return async (dispatch) => {
-    // const asyncResp = await exampleAPI()
-    // dispatch(
-    //   sendMessage({
-    //     message,
-    //     user: asyncResp,
-    //     timestamp: new Date().getTime()
-    //   })
-    // )
     try {
       console.log(task);
       
@@ -63,7 +55,6 @@ export const taskToggleFn = (task: ITask, completed: boolean): ThunkAction<void,
     } catch (error) {
       console.log(error);
     }
-    // dispatch(taskToggle(id))
   }
 }
 const taskToggle = (task: ITask) => ({
@@ -77,7 +68,6 @@ export const taskRemoveFn = (task: ITask): ThunkAction<void, RootState, unknown,
       const resp = await fetchSinToken(`${process.env.REACT_APP_DELETE_TASK_ENPOINT}/${task.id}`, {}, 'DELETE');
       const body = await resp.json();
       if (body.success) {
-        // todo: mostrar un mensaje de confirmación
         dispatch(removeTask(task.id));
       }
     } catch (error) {
@@ -89,6 +79,26 @@ export const taskRemoveFn = (task: ITask): ThunkAction<void, RootState, unknown,
 const removeTask = (id: string | undefined) => ({
   type: types.taskRemove,
   payload: id
+})
+
+export const taskUpdateFn = (task: ITask): ThunkAction<void, RootState, unknown, AnyAction> => {
+  return async (dispatch) => {
+    try {
+      const task2 = {...task, id: undefined, updatedAt: undefined, createdAt: undefined};
+      const resp = await fetchSinToken(`${process.env.REACT_APP_UPDATE_TASK_ENPOINT}/${task.id}`, task2, 'PUT');
+      const body = await resp.json();
+      if (body.success) {
+        dispatch(taskUpdate(task));
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+}
+
+const taskUpdate = (task: ITask) => ({
+  type: types.taskUpdate,
+  payload: task
 })
 
 export const startLoading = (): ThunkAction<void, RootState, unknown, AnyAction> => {

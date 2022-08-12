@@ -41,13 +41,13 @@ export const tasksReducer = (state = initialState, action: AnyAction) => {
                 }
                 )
             }
-        // case types.taskToggle:
-        //     return {
-        //         ...state,
-        //         tasks: state.tasks.map(
-        //             t => (t.id === action.payload.id) ? action.payload : t 
-        //         )
-        //     }
+        case types.taskUpdate:
+            return {
+                ...state,
+                tasks: state.tasks.map(
+                    t => (t.id === action.payload.id) ? action.payload : t 
+                )
+            }
         case types.taskRemove:
             return {
                 ...state,

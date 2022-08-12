@@ -2,11 +2,11 @@
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #E6E6E6;
+  /* background-color: #E6E6E6; */
 }
 
 .container-principal {
-  background-color: #F2F2F2;
+  background-color: #E6E6E6;
 }
 
 .container-home {
@@ -101,6 +101,26 @@
   border: none;
 }
 
+.input-task {
+  background-color: transparent;
+  margin-left: 1rem;
+  width: 90%;
+  outline: none;
+  border: none;
+}
+
+.text-task {
+  background-color: transparent;
+  margin-left: 1rem;
+  word-wrap: break-word;
+  white-space: initial;
+}
+
+.input-task:focus {
+  outline: none;
+  border: none;
+}
+
 .icon-add {
   background-color: transparent;
   margin-left: 1rem;
@@ -127,4 +147,50 @@
 
 .icon-delete:hover {
   color: #bd1b1b;
+}
+
+.icon-edit {
+  background-color: transparent;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.icon-edit:hover {
+  color: #0073bf;
+}
+
+.btn-confirm {
+  background-color: #767777;
+  border-radius: 16px;
+  border: none;
+  height: 40px;
+  box-shadow: -6.64551px -6.64551px 19.9365px #FFFFFF, 9.96827px 9.96827px 19.9365px rgba(174, 174, 192, 0.4);
+  width: 100px;
+  margin: 5px;
+  color: #F2F2F2;
+  cursor: pointer;
+  transition: ease-in-out 0.5s;
+}
+
+.btn-cancel {
+  background-color: #E6E6E6;
+  border-radius: 16px;
+  border: none;
+  height: 40px;
+  box-shadow: -6.64551px -6.64551px 19.9365px #FFFFFF, 9.96827px 9.96827px 19.9365px rgba(174, 174, 192, 0.4);
+  width: 100px;
+  margin: 5px;
+  color: #000;
+  cursor: pointer;
+  transition: ease-in-out 0.5s;
+}
+
+.btn-confirm:hover, .btn-cancel:hover {
+  background-color: #111111;
+  color: #F2F2F2;
+}
+
+body.swal2-shown > [aria-hidden="true"] {
+  transition: 0.1s filter;
+  filter: blur(5px);
 }
