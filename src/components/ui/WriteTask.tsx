@@ -1,12 +1,13 @@
 import React, { useRef, useState } from 'react';
 import { taskAddFn } from '../../actions/tasks';
-import { useAppDispatch } from '../../store/store';
+import { useAppDispatch, useAppSelector } from '../../store/store';
 
 
 export const WriteTask = () => {
 
   // The `state` arg is correctly typed as `RootState` already
   // const count = useAppSelector(state => state.counter.value)
+  const { id } = useAppSelector(state => state.users)
   const dispatch = useAppDispatch()
 
   const [writing, setWriting] = useState(false);
@@ -46,7 +47,7 @@ export const WriteTask = () => {
     dispatch(taskAddFn({
       title: title,
       completed: false,
-      author: '62f2c0431177b8d7f9ddc235'
+      author: id
     }));
     reset();
   }

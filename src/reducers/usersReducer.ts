@@ -2,7 +2,7 @@ import { AnyAction } from 'redux'
 import { types } from '../types/typesReducers'
 
 interface AuthState {
-    checking: boolean
+    checking: boolean;
 }
 
 const initialState: AuthState = {
