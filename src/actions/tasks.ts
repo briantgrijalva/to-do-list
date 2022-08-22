@@ -44,6 +44,7 @@ export const taskToggleFn = (task: ITask, completed: boolean): ThunkAction<void,
       
       console.log(`${process.env.REACT_APP_UPDATE_TASK_ENPOINT}/${task.id}`);
       const task2 = {...task, completed: completed, id: undefined, updatedAt: undefined, createdAt: undefined};
+      console.log(task2);
       
       const resp = await fetchConToken(`${process.env.REACT_APP_UPDATE_TASK_ENPOINT}/${task.id}`, task2, 'PUT');
       console.log(resp);

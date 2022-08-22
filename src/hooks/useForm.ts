@@ -1,15 +1,16 @@
 import { useState } from 'react';
 
 interface IUserLogin {
-    lEmail: string;
-    lPassword: string;
-}
-
-interface IUserCreate {
-    name: string;
+    name?: string;
     email: string;
     password: string;
 }
+
+// interface IUserCreate {
+//     Rname: string;
+//     Remail: string;
+//     Rpassword: string;
+// }
 
 
 export const useForm = ( initialState: IUserLogin ): [ IUserLogin, (event: React.ChangeEvent<HTMLInputElement>) => void, any] => {

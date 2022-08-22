@@ -28,6 +28,7 @@ export const Task = ({tastkText, id, allTasks}: TaskProps) => {
   const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.checked) {
       console.log(e.target);
+      console.log(allTasks);
       setThrough(true);
       dispatch(taskToggleFn(allTasks, true));
     } else {

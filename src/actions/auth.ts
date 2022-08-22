@@ -31,6 +31,28 @@ export const authStart = (email: string, password: string): ThunkAction<void, Ro
     }
 }
 
+export const authRegister = (name: string, email: string, password: string): ThunkAction<void, RootState, unknown, AnyAction> => {
+    return async (dispatch) => {
+        const resp = await fetchSinToken(`${process.env.REACT_APP_LOGIN_AUTH_ENPOINT}`, { name, email, password }, 'POST');
+        const body = await resp.json();
+        console.log(body);
+
+        if (body.success) {
+            localStorage.setItem('token', body.token);
+
+            dispatch(login({
+                id: body.data.id,
+                name: body.data.name
+            }));
+
+        } else {
+            console.log(body.message);
+            console.log('error');
+            
+        }
+    }
+}
+
 export const startChecking = (): ThunkAction<void, RootState, unknown, AnyAction> => {
     return async (dispatch) => {
         const resp = await fetchConToken(`${process.env.REACT_APP_RENEW_AUTH_ENPOINT}`, {}, 'GET');

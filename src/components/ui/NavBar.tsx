@@ -17,6 +17,8 @@ export const NavBar = () => {
       </button> */}
       <button
         onClick={handleLogout}
+        className='btn-confirm'
+        style={{float: 'right'}}
       >
         Log Out
       </button>
