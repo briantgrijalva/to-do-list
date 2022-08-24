@@ -9,13 +9,10 @@ import { fetchConToken } from '../utils/fetch'
 export const taskAddFn = (task: ITask): ThunkAction<void, RootState, unknown, AnyAction> => {
   return async (dispatch) => {
     const resp = await fetchConToken(`${process.env.REACT_APP_CREATE_TASK_ENPOINT}`, task, 'POST');
-    console.log(resp);
     
     const body = await resp.json();
-    console.log(body);
     if (body.success) {
       dispatch(taskAdd(body.data));
-      console.log('taskAddFn');
       
     } else {
       console.log(body.message);
@@ -40,20 +37,14 @@ const taskAdd = (task: ITask) =>({
 export const taskToggleFn = (task: ITask, completed: boolean): ThunkAction<void, RootState, unknown, AnyAction> => {
   return async (dispatch) => {
     try {
-      console.log(task);
       
-      console.log(`${process.env.REACT_APP_UPDATE_TASK_ENPOINT}/${task.id}`);
       const task2 = {...task, completed: completed, id: undefined, updatedAt: undefined, createdAt: undefined};
-      console.log(task2);
       
       const resp = await fetchConToken(`${process.env.REACT_APP_UPDATE_TASK_ENPOINT}/${task.id}`, task2, 'PUT');
-      console.log(resp);
       
       const body = await resp.json();
-      console.log(body);
       if (body.success) {
         dispatch(taskToggle(task));
-        console.log('taskToggleFn');
       }
     } catch (error) {
       console.log(error);

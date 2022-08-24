@@ -7,13 +7,8 @@
 
 .container-register-user, .container-login-user {
     width: 20rem;
-    /* margin: auto; */
     padding: 1.4rem;
     background-color: #F2F2F2;
-    /* height: 92vh;
-    display: inline-block;
-    width: 20%;
-    vertical-align: top; */
     background-blend-mode: soft-light, normal;
     box-shadow: -6.64551px -6.64551px 19.9365px #FFFFFF, 9.96827px 9.96827px 19.9365px rgba(174, 174, 192, 0.4);
   }

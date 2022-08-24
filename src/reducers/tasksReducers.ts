@@ -29,7 +29,6 @@ export const tasksReducer = (state = initialState, action: AnyAction) => {
             return {
                 ...state,
                 tasks: state.tasks.map(task => {
-                    console.log(task.id, action.payload);
                     
                     if (task.id === action.payload) {
                         return {
@@ -38,7 +37,7 @@ export const tasksReducer = (state = initialState, action: AnyAction) => {
                         }
                     }
                     return task
-                }
+                    }
                 )
             }
         case types.taskUpdate:

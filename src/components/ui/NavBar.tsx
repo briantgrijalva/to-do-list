@@ -12,9 +12,6 @@ export const NavBar = () => {
 
   return (
     <div className="container-nav">
-      {/* <button>
-        <img src={logo} alt="logo" />
-      </button> */}
       <button
         onClick={handleLogout}
         className='btn-confirm'

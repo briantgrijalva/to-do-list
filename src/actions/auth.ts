@@ -13,7 +13,6 @@ export const authStart = (email: string, password: string): ThunkAction<void, Ro
     return async (dispatch) => {
         const resp = await fetchSinToken(`${process.env.REACT_APP_LOGIN_AUTH_ENPOINT}`, { email, password }, 'POST');
         const body = await resp.json();
-        console.log(body);
 
         if (body.success) {
             localStorage.setItem('token', body.token);
@@ -35,7 +34,6 @@ export const authRegister = (name: string, email: string, password: string): Thu
     return async (dispatch) => {
         const resp = await fetchSinToken(`${process.env.REACT_APP_LOGIN_AUTH_ENPOINT}`, { name, email, password }, 'POST');
         const body = await resp.json();
-        console.log(body);
 
         if (body.success) {
             localStorage.setItem('token', body.token);
@@ -57,8 +55,6 @@ export const startChecking = (): ThunkAction<void, RootState, unknown, AnyAction
     return async (dispatch) => {
         const resp = await fetchConToken(`${process.env.REACT_APP_RENEW_AUTH_ENPOINT}`, {}, 'GET');
         const body = await resp.json();
-
-        console.log(body);
         
         if (body.success) {
             localStorage.setItem('token', body.token);

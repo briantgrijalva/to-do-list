@@ -42,7 +42,6 @@ export const WriteTask = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log('submit');
     setWriting(false);
     dispatch(taskAddFn({
       title: title,

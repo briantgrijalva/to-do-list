@@ -23,7 +23,6 @@ export const LoginScreen = () => {
     dispatch(authStart(email, password));
 
     reset();
-    // console.log(formLoginValues);
   }
 
   const handleRegister = (e: React.FormEvent<HTMLFormElement>) => {
