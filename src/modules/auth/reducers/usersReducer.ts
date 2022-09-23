@@ -1,5 +1,5 @@
 import { AnyAction } from 'redux'
-import { types } from '../types/typesReducers'
+import { types } from '../../../types/typesReducers'
 
 interface AuthState {
     checking: boolean;

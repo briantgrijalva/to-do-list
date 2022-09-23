@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { startChecking } from '../actions/auth'
-import { LoginScreen } from '../components/LoginScreen'
+import { startChecking } from '../modules/auth/actions/auth'
+import { LoginScreen } from '../ui/LoginScreen'
 import { useAppDispatch, useAppSelector } from '../store/store'
 import { DashboardRoutes } from './DashboardRoutes'
 import { PrivateRoute } from './PrivateRoute'
@@ -26,7 +26,6 @@ export const AppRouter = () => {
 
             <Routes>
 
-                
 
                 <Route path="/login" element={
 
@@ -36,7 +35,7 @@ export const AppRouter = () => {
 
                 } />
 
-
+                
                 <Route path="/*" element={
                      <PrivateRoute>
                          <DashboardRoutes />

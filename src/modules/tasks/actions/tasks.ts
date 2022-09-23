@@ -2,9 +2,9 @@ import { AnyAction } from 'redux'
 // import { sendMessage } from './store/chat/actions'
 import { ThunkAction } from 'redux-thunk'
 import { ITask } from '../reducers/tasksReducers'
-import { RootState } from '../store/store'
-import { types } from '../types/typesReducers'
-import { fetchConToken } from '../utils/fetch'
+import { RootState } from '../../../store/store'
+import { types } from '../../../types/typesReducers'
+import { fetchConToken } from '../../../utils/fetch'
 
 export const taskAddFn = (task: ITask): ThunkAction<void, RootState, unknown, AnyAction> => {
   return async (dispatch) => {

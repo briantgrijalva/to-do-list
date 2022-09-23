@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
-import { taskRemoveFn, taskToggleFn, taskUpdateFn } from "../../actions/tasks";
-import { useAppDispatch } from "../../store/store";
+import { taskRemoveFn, taskToggleFn, taskUpdateFn } from "../actions/tasks";
+import { useAppDispatch } from "../../../store/store";
 
 interface TaskProps {
   tastkText: string;

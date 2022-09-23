@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useForm } from '../hooks/useForm';
 import { useAppDispatch } from '../store/store';
-import { authStart } from '../actions/auth';
+import { authStart } from '../modules/auth/actions/auth';
 import '../styles/loginScreen.css';
 
 export const LoginScreen = () => {

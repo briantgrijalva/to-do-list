@@ -1,8 +1,8 @@
-import { types } from "../types/typesReducers";
+import { types } from "../../../types/typesReducers";
 import { AnyAction } from 'redux'
 import { ThunkAction } from 'redux-thunk'
-import { RootState } from '../store/store'
-import { fetchConToken, fetchSinToken } from "../utils/fetch";
+import { RootState } from '../../../store/store'
+import { fetchConToken, fetchSinToken } from "../../../utils/fetch";
 
 interface IUser {
     id: string;

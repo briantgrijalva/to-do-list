@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
-import { tasksReducer } from '../reducers/tasksReducers'
-import { usersReducer } from '../reducers/usersReducer'
+import { tasksReducer } from '../modules/tasks/reducers/tasksReducers'
+import { usersReducer } from '../modules/auth/reducers/usersReducer'
 
 export const store = configureStore({
   reducer: {

@@ -1,5 +1,5 @@
-import { logoutFn } from "../../actions/auth"
-import { useAppDispatch } from "../../store/store"
+import { logoutFn } from "../modules/auth/actions/auth"
+import { useAppDispatch } from "../store/store"
 
 export const NavBar = () => {
 

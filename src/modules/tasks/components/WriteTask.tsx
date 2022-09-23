@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
-import { taskAddFn } from '../../actions/tasks';
-import { useAppDispatch, useAppSelector } from '../../store/store';
+import { taskAddFn } from '../actions/tasks';
+import { useAppDispatch, useAppSelector } from '../../../store/store';
 
 
 export const WriteTask = () => {
